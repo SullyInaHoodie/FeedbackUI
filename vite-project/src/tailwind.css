@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  .animate-bounceIn {
+    animation: bounceIn 1s ease;
+  }
+}
+
+body {
+  @apply m-0 bg-[rgb(73,41,35)] text-[rgb(247,244,243)] flex min-h-screen justify-center items-center font-mono;
+}
+
+.container {
+  @apply bg-[rgba(255,255,255,.3)] shadow-md rounded-lg p-5 w-5/6 max-w-md text-center text-lg animate-fadeIn;
+}
+
+.heading {
+  @apply m-2 text-3xl font-bold;
+}
+
+.rating-container {
+  @apply flex py-5 justify-around;
+}
+
+.rating {
+  @apply cursor-pointer p-4 m-2 flex flex-col items-center transition-transform transform hover:scale-110;
+}
+
+.rating i {
+  @apply mb-2 text-5xl text-white;
+}
+
+.rating:hover i,
+.rating.active i {
+  @apply text-yellow-300;
+}
+
+.rating:hover,
+.rating.active {
+  @apply bg-[rgb(209,149,145)] rounded-lg shadow-md text-[rgb(173,64,1)] transition duration-300;
+}
+
+.btn {
+  @apply bg-[rgba(247,97,37,0.596)] text-white border-0 m-2 rounded-md py-3 px-8 cursor-pointer transition-transform transform hover:scale-105 animate-bounceIn;
+}
+
+.btn:hover {
+  @apply shadow-md transition duration-300;
+}
+
+.btn:active {
+  @apply scale-95;
+}
